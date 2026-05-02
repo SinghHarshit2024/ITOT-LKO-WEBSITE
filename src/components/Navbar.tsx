@@ -77,35 +77,46 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
-            <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-white z-[60] md:hidden flex flex-col p-6 pt-32 overflow-y-auto"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60] md:hidden"
+            onClick={() => setIsOpen(false)}
           >
-            <div className="w-full space-y-8 text-center pb-20">
-              {navLinks.map((link, idx) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
-                >
-                  <Link
-                    to={link.path}
-                    className={`block text-5xl font-bold tracking-tighter transition-colors ${location.pathname === link.path ? 'text-amber-500' : 'text-black'}`}
-                    onClick={() => setIsOpen(false)}
+            <motion.div
+              initial={{ y: '-100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '-100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="bg-white w-full max-h-[90vh] flex flex-col shadow-2xl rounded-b-[40px] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex-1 flex flex-col items-center justify-center p-8 pt-24 pb-16 space-y-8 overflow-y-auto">
+                {navLinks.map((link, idx) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.05 + 0.1 }}
+                    className="w-full text-center"
                   >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
-              <div className="pt-16 border-t border-gray-100 max-w-xs mx-auto">
-                <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">Contact Admissions</p>
-                <p className="text-black font-bold">+91 522 XXX XXXX</p>
+                    <Link
+                      to={link.path}
+                      className={`block text-4xl sm:text-5xl font-bold tracking-tighter transition-colors ${location.pathname === link.path ? 'text-amber-500' : 'text-black'}`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+                <div className="w-full pt-12 border-t border-gray-100 max-w-xs mx-auto text-center">
+                  <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">Contact Admissions</p>
+                  <p className="text-black font-bold">+91 522 XXX XXXX</p>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
