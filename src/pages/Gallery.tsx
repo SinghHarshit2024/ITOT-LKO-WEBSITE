@@ -70,7 +70,7 @@ const Gallery = () => {
         {/* Gallery Grid */}
         <motion.div 
           layout
-          className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
             {filteredImages.map((img, idx) => (
@@ -81,16 +81,16 @@ const Gallery = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="relative group overflow-hidden rounded-[40px] cursor-pointer bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all"
+                className="relative group overflow-hidden rounded-[32px] md:rounded-[40px] cursor-pointer bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all aspect-square sm:aspect-video lg:aspect-square"
               >
                 <img 
                   src={img.url} 
                   alt={img.title} 
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 md:p-10">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 md:p-8">
                   <span className="text-amber-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2">{img.category}</span>
-                  <p className="text-white font-bold text-xl md:text-2xl tracking-tighter leading-none">{img.title}</p>
+                  <p className="text-white font-bold text-lg md:text-xl tracking-tighter leading-none">{img.title}</p>
                 </div>
               </motion.div>
             ))}

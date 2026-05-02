@@ -103,6 +103,40 @@ const Home = () => {
     }
   ];
 
+  const leadershipMessages = [
+    {
+      role: "Director",
+      name: "Dr. S.P. Vishwakarma",
+      quote: "Quality training is the cornerstone of sustainable industrial growth. Our commitment at ITOT is to produce instructors who don't just teach, but transform the vocational landscape.",
+      image: "/Images/img4.jpeg"
+    },
+    {
+      role: "Deputy Director",
+      name: "Smt. Anjali Singh",
+      quote: "Innovation in vocational pedagogy is not just about tools, it's about the mindset of excellence. We nurture that mindset every day at our campus through hands-on learning.",
+      image: "/Images/img6.jpeg"
+    },
+    {
+      role: "Assistant Director",
+      name: "Shri Rajesh Kumar",
+      quote: "Bridging the gap between traditional skills and Industry 4.0 demands a pedagogical shift that we facilitate through rigorous workshop interactions and modern teaching methodologies.",
+      image: "/Images/img2.jpeg"
+    }
+  ];
+
+  const dignitaries = [
+    {
+      role: "Prime Minister of India",
+      name: "Shri Narendra Modi",
+      image: "/Images/img3.jpeg"
+    },
+    {
+      role: "Chief Minister of UP",
+      name: "Shri Yogi Adityanath",
+      image: "/Images/img5.jpeg"
+    }
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
 
@@ -193,8 +227,69 @@ const Home = () => {
               key={idx}
               onClick={() => setCurrentIndex(idx)}
               className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? 'w-8 bg-amber-500' : 'bg-white/40'}`}
+              aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
+        </div>
+      </section>
+
+      {/* Government Dignitaries Section */}
+      <section className="py-16 bg-[#fdfdfb] border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-6 block"
+            >
+              Visionary Patronage
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-bold tracking-tighter text-black leading-tight mb-8"
+            >
+              Under the Resolute Guidance of Our Leadership
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-gray-600 text-lg leading-relaxed"
+            >
+              Government ITOT Lucknow is privileged to operate under the transformative vision of the State and Union government, committed to scaling new heights in vocational training and instructor excellence.
+            </motion.p>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-32">
+            {dignitaries.map((leader, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="flex flex-col items-center text-center group"
+              >
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-8 border-gray-50 mb-6 transition-all duration-500 shadow-xl relative">
+                  <div className="absolute inset-0 bg-amber-500/5 z-10" />
+                  <img 
+                    src={leader.image} 
+                    alt={leader.name}
+                    className="w-full h-full object-cover transition-all duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-amber-500 font-bold uppercase tracking-[0.2em] text-[10px] block">{leader.role}</span>
+                  <h3 className="text-2xl md:text-3xl font-black tracking-tighter text-black">{leader.name}</h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -228,7 +323,7 @@ const Home = () => {
       {/* Affiliations & Accreditations */}
       <section className="py-12 border-y border-gray-100 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-12 gap-y-10 md:gap-24 opacity-100 md:opacity-60 md:grayscale md:hover:grayscale-0 transition-all duration-500">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-12 gap-y-10 md:gap-24 opacity-100 transition-all duration-500">
             {[
               { name: "NCVT", icon: ShieldCheck, full: "Council" },
               { name: "DGT", icon: Zap, full: "Training" },
@@ -236,7 +331,7 @@ const Home = () => {
               { name: "SKILL INDIA", icon: Globe, full: "Mission" }
             ].map((brand, i) => (
               <div key={i} className="flex flex-col md:flex-row items-center gap-3 justify-center min-w-[120px] md:min-w-0">
-                <div className="w-10 h-10 md:w-10 md:h-10 bg-amber-500/10 md:bg-amber-500 rounded-full flex items-center justify-center text-amber-600 md:text-black flex-shrink-0 transition-all group-hover:scale-110">
+                <div className="w-10 h-10 md:w-10 md:h-10 bg-amber-500/10 md:bg-amber-500 rounded-full flex items-center justify-center text-amber-600 md:text-black flex-shrink-0 transition-all">
                   <brand.icon className="w-5 h-5 md:w-5 md:h-5" />
                 </div>
                 <div className="text-center md:text-left">
@@ -249,51 +344,58 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Message from Desk Section */}
+      {/* Administrative Leadership Section */}
       <section className="py-24 bg-[#fdfdfb]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-6 block"
             >
-              <div className="aspect-[4/5] bg-gray-200 rounded-[40px] overflow-hidden">
-                <img 
-                  src="/Images/img4.jpeg" 
-                  alt="Principal Desk"
-                  className="w-full h-full object-cover md:grayscale md:hover:grayscale-0 transition-all duration-700"
-                />
-              </div>
-              <div className="absolute -bottom-10 -right-10 bg-amber-500 p-12 rounded-[40px] hidden md:block text-black">
-                <Quote className="w-12 h-12 mb-4" />
-                <p className="font-bold text-xl leading-tight">
-                  "Excellence is <br />not a destination, <br />it is a continuous <br />journey."
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              Our Leadership
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-bold tracking-tighter text-black leading-tight"
             >
-              <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-6 block">From the Principal's Desk</span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8 leading-tight">
-                Nurturing the Next Generation of Master Educators
-              </h2>
-              <div className="space-y-6 text-gray-600 leading-relaxed text-lg text-balance">
-                <p>
-                  At ITOT Lucknow, we believe that the quality of technical education is directly proportional to the quality of its instructors. Our mission is to bridge the gap between technical expertise and instructional excellence.
-                </p>
-                <p>
-                  By integrating advanced pedagogical theories with hands-on workshop experience, we ensure that our trainees are not just masters of their craft, but true mentors who can inspire the next wave of industrial talent.
-                </p>
-              </div>
-              <Link to="/about" className="mt-10 inline-flex items-center gap-3 font-bold text-black border-b-2 border-black pb-1 hover:text-amber-600 hover:border-amber-600 transition-all">
-                Learn More About Our Vision <ArrowRight className="w-5 h-5" />
-              </Link>
-            </motion.div>
+              Messages from the <br /> Administrative Desk
+            </motion.h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {leadershipMessages.map((leader, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-sm transition-all group"
+              >
+                <div className="aspect-[4/5] relative overflow-hidden">
+                  <img 
+                    src={leader.image} 
+                    alt={leader.role}
+                    className="w-full h-full object-cover transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-amber-500 font-bold uppercase tracking-widest text-[10px] mb-1">{leader.role}</p>
+                    <p className="text-white font-bold text-xl tracking-tight">{leader.name}</p>
+                  </div>
+                </div>
+                <div className="p-8 relative min-h-[180px] flex flex-col justify-center">
+                  <Quote className="w-8 h-8 text-amber-500/10 absolute top-6 right-8 rotate-180" />
+                  <p className="text-gray-600 leading-relaxed italic relative z-10">
+                    "{leader.quote}"
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -363,7 +465,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="lg:col-span-8 bg-gray-50 rounded-[40px] p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group border border-gray-100 shadow-sm min-h-[350px] md:min-h-0"
             >
-              <img src="/Images/img1.jpeg" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 md:opacity-20 md:grayscale md:transition-all md:duration-700 md:group-hover:scale-105" alt="Life" />
+              <img src="/Images/img1.jpeg" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 md:transition-all md:duration-700" alt="Life" />
               <div className="relative z-10">
                 <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block">Campus Life</span>
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-black max-w-xl leading-none">
@@ -392,7 +494,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="lg:col-span-4 bg-black rounded-[40px] overflow-hidden relative group"
             >
-              <img src="/Images/img2.jpeg" className="w-full h-full object-cover opacity-80 md:opacity-60 md:group-hover:scale-110 transition-transform duration-700" alt="Workshop" />
+              <img src="/Images/img2.jpeg" className="w-full h-full object-cover opacity-80 transition-transform duration-700" alt="Workshop" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-10 flex flex-col justify-end">
                 <p className="text-white font-bold tracking-tight">Advanced Labs</p>
                 <p className="text-gray-400 text-sm">Working with industrial standards</p>
