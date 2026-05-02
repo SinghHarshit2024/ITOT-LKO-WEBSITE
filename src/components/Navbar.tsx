@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-[70]">
         <Link to="/" className="flex items-center gap-3">
           <img src="/Images/logo.jpg" alt="ITOT Logo" className="w-10 h-10 object-contain rounded-lg" />
           <span className="text-xl font-bold tracking-tighter text-black leading-tight">
@@ -82,20 +82,26 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-white/98 backdrop-blur-xl z-40 md:hidden flex flex-col justify-center items-center p-6"
+            className="fixed inset-0 bg-white z-[60] md:hidden flex flex-col p-6 pt-32 overflow-y-auto"
           >
-            <div className="w-full max-w-sm space-y-6 text-center">
-              {navLinks.map((link) => (
-                <Link
+            <div className="w-full space-y-8 text-center pb-20">
+              {navLinks.map((link, idx) => (
+                <motion.div
                   key={link.name}
-                  to={link.path}
-                  className={`block text-4xl font-bold tracking-tighter transition-colors ${location.pathname === link.path ? 'text-amber-500' : 'text-black'}`}
-                  onClick={() => setIsOpen(false)}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.05 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link
+                    to={link.path}
+                    className={`block text-5xl font-bold tracking-tighter transition-colors ${location.pathname === link.path ? 'text-amber-500' : 'text-black'}`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
-              <div className="pt-12 border-t border-gray-100">
+              <div className="pt-16 border-t border-gray-100 max-w-xs mx-auto">
                 <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">Contact Admissions</p>
                 <p className="text-black font-bold">+91 522 XXX XXXX</p>
               </div>

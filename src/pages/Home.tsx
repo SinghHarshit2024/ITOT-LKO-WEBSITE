@@ -228,20 +228,20 @@ const Home = () => {
       {/* Affiliations & Accreditations */}
       <section className="py-12 border-y border-gray-100 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-8 md:gap-24 opacity-80 md:opacity-60 md:grayscale md:hover:grayscale-0 transition-all duration-500">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 md:gap-x-6 gap-y-8 md:gap-24 opacity-100 md:opacity-60 md:grayscale md:hover:grayscale-0 transition-all duration-500">
             {[
-              { name: "NCVT", icon: ShieldCheck, full: "NCVT Council" },
-              { name: "DGT", icon: Zap, full: "DGT Training" },
-              { name: "UP GOVT", icon: Building2, full: "UP Government" },
-              { name: "SKILL INDIA", icon: Globe, full: "Skill India" }
+              { name: "NCVT", icon: ShieldCheck, full: "Council" },
+              { name: "DGT", icon: Zap, full: "Training" },
+              { name: "UP GOVT", icon: Building2, full: "UP Govt" },
+              { name: "SKILL INDIA", icon: Globe, full: "Mission" }
             ].map((brand, i) => (
-              <div key={i} className="flex items-center gap-3 justify-center md:justify-start">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-amber-500 rounded-full flex items-center justify-center text-black flex-shrink-0">
-                  <brand.icon className="w-4 h-4 md:w-5 md:h-5" />
+              <div key={i} className="flex items-center gap-1.5 md:gap-3">
+                <div className="w-7 h-7 md:w-10 md:h-10 bg-amber-500 rounded-full flex items-center justify-center text-black flex-shrink-0">
+                  <brand.icon className="w-3.5 h-3.5 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <p className="font-black text-lg md:text-xl tracking-tighter leading-none">{brand.name}</p>
-                  <p className="text-[8px] md:text-[10px] uppercase font-bold text-gray-500">{brand.full}</p>
+                  <p className="font-black text-sm md:text-xl tracking-tighter leading-none">{brand.name}</p>
+                  <p className="text-[6px] md:text-[10px] uppercase font-bold text-gray-400">{brand.full}</p>
                 </div>
               </div>
             ))}
