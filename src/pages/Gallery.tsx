@@ -35,10 +35,10 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block">Visual Journey</span>
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 max-w-4xl">
+            <h1 className="text-4xl md:text-8xl font-bold tracking-tighter mb-8 max-w-4xl">
               Moments from <span className="text-amber-500 underline decoration-2 underline-offset-8">ITOT.</span>
             </h1>
-            <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed">
               Explore our campus through a collection of memories, from intensive classroom sessions to vibrant cultural and sports events.
             </p>
           </motion.div>
@@ -88,9 +88,9 @@ const Gallery = () => {
                   alt={img.title} 
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 md:p-10">
                   <span className="text-amber-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2">{img.category}</span>
-                  <p className="text-white font-bold text-2xl tracking-tighter leading-none">{img.title}</p>
+                  <p className="text-white font-bold text-xl md:text-2xl tracking-tighter leading-none">{img.title}</p>
                 </div>
               </motion.div>
             ))}

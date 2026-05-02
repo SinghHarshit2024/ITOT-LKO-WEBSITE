@@ -192,12 +192,13 @@ const Courses = () => {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
+              className="text-center md:text-left"
             >
-              <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block">Craft Instructor Training Scheme (CITS)</span>
-              <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-none">
+              <span className="text-amber-500 font-bold uppercase tracking-widest text-[10px] md:text-xs mb-4 block">Craft Instructor Training Scheme (CITS)</span>
+              <h1 className="text-4xl md:text-8xl font-bold tracking-tighter mb-8 leading-tight">
                 Sharpening the <span className="text-amber-500 underline decoration-2 underline-offset-8">Instructors.</span>
               </h1>
-              <p className="text-xl text-gray-500 max-w-xl leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-500 max-w-xl mx-auto md:mx-0 leading-relaxed">
                 Our curriculum integrates industrial expertise with modern teaching methodology to produce master trainers for the global market.
               </p>
             </motion.div>
@@ -209,7 +210,7 @@ const Courses = () => {
               <input 
                 type="text" 
                 placeholder="Search for a specific trade..." 
-                className="w-full pl-16 pr-8 py-6 bg-white border border-gray-100 rounded-[32px] shadow-sm focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 outline-none transition-all text-lg font-medium"
+                className="w-full pl-14 md:pl-16 pr-6 md:pr-8 py-5 md:py-6 bg-white border border-gray-100 rounded-[32px] shadow-sm focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 outline-none transition-all text-base md:text-lg font-medium"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -301,17 +302,17 @@ const Courses = () => {
               initial={{ opacity: 0, scale: 0.9, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 40 }}
-              className="relative w-full max-w-3xl bg-white rounded-[48px] overflow-hidden shadow-2xl flex flex-col md:flex-row"
+              className="relative w-full max-w-3xl bg-white rounded-3xl md:rounded-[48px] overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]"
             >
-              <div className="md:w-2/5 bg-amber-500 p-12 text-black flex flex-col justify-between">
+              <div className="md:w-2/5 bg-amber-500 p-8 md:p-12 text-black flex flex-col justify-between">
                 <div>
-                   <GraduationCap className="w-16 h-16 mb-8 opacity-40" />
-                   <h4 className="text-4xl font-bold tracking-tighter leading-none mb-6">Expert <br /> Pedagogy</h4>
-                   <p className="font-medium text-black/70 leading-relaxed mb-auto">
+                   <GraduationCap className="w-12 h-12 md:w-16 md:h-16 mb-6 md:mb-8 opacity-40" />
+                   <h4 className="text-3xl md:text-4xl font-bold tracking-tighter leading-none mb-6">Expert <br /> Pedagogy</h4>
+                   <p className="font-medium text-black/70 leading-relaxed mb-auto text-sm md:text-base">
                      "Transforming vocational training into a high-impact teaching career."
                    </p>
                 </div>
-                <div className="space-y-4">
+                <div className="hidden md:block space-y-4 pt-8">
                   <div className="bg-black/5 p-4 rounded-2xl border border-black/10">
                     <p className="text-[10px] font-bold uppercase tracking-widest opacity-60 mb-2">Duration</p>
                     <p className="font-bold flex items-center gap-2"><Clock className="w-4 h-4" /> {selectedCourse.duration}</p>
@@ -323,10 +324,10 @@ const Courses = () => {
                 </div>
               </div>
               
-              <div className="md:w-3/5 p-12 overflow-y-auto max-h-[85vh]">
+              <div className="md:w-3/5 p-8 md:p-12 overflow-y-auto">
                 <button 
                   onClick={() => setSelectedCourse(null)}
-                  className="absolute top-8 right-8 p-3 text-gray-400 hover:text-black hover:bg-gray-100 rounded-full transition-all z-20"
+                  className="absolute top-6 right-6 md:top-8 md:right-8 p-3 text-gray-400 hover:text-black hover:bg-gray-100 rounded-full transition-all z-20"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -381,7 +382,7 @@ interface CourseCardProps {
 const CourseCard = ({ course, onOpen }: CourseCardProps) => (
   <motion.div 
     whileHover={{ y: -10 }}
-    className="group p-10 bg-white border border-gray-100 rounded-[40px] hover:border-amber-500 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 flex flex-col justify-between"
+    className="group p-8 md:p-10 bg-white border border-gray-100 rounded-3xl md:rounded-[40px] hover:border-amber-500 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 flex flex-col justify-between"
   >
     <div>
       <div className="flex justify-between items-start mb-10">

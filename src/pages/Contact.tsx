@@ -69,7 +69,7 @@ const Contact = () => {
             className="max-w-3xl"
           >
             <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-6 block">Contact Us</span>
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-10 text-black">
+            <h1 className="text-4xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-10 text-black px-4 md:px-0">
               Let's craft your <span className="text-amber-500 underline decoration-2 underline-offset-8">career</span> path together.
             </h1>
             <p className="text-xl text-gray-500 leading-relaxed max-w-2xl">
@@ -132,7 +132,7 @@ const Contact = () => {
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="bg-white p-8 md:p-16 rounded-[60px] border border-gray-100 shadow-2xl shadow-gray-200/40 relative overflow-hidden h-full"
+                className="bg-white p-6 md:p-16 rounded-3xl md:rounded-[60px] border border-gray-100 shadow-2xl shadow-gray-200/40 relative overflow-hidden h-full"
               >
                 <AnimatePresence mode="wait">
                   {status === 'success' ? (
@@ -178,7 +178,7 @@ const Contact = () => {
                                 required
                                 type="text"
                                 placeholder="Enter your full name" 
-                                className="w-full pl-16 pr-8 py-5 bg-gray-50 rounded-3xl border border-transparent focus:bg-white focus:border-amber-500 focus:shadow-[0_0_0_4px_rgba(245,158,11,0.1)] transition-all outline-none text-black font-medium"
+                                className="w-full pl-14 md:pl-16 pr-6 md:pr-8 py-4 md:py-5 bg-gray-50 rounded-3xl border border-transparent focus:bg-white focus:border-amber-500 focus:shadow-[0_0_0_4px_rgba(245,158,11,0.1)] transition-all outline-none text-black font-medium"
                                 value={formData.name}
                                 onChange={(e) => setFormData({...formData, name: e.target.value})}
                               />
@@ -192,7 +192,7 @@ const Contact = () => {
                                 required
                                 type="email"
                                 placeholder="name@example.com" 
-                                className="w-full pl-16 pr-8 py-5 bg-gray-50 rounded-3xl border border-transparent focus:bg-white focus:border-amber-500 focus:shadow-[0_0_0_4px_rgba(245,158,11,0.1)] transition-all outline-none text-black font-medium"
+                                className="w-full pl-14 md:pl-16 pr-6 md:pr-8 py-4 md:py-5 bg-gray-50 rounded-3xl border border-transparent focus:bg-white focus:border-amber-500 focus:shadow-[0_0_0_4px_rgba(245,158,11,0.1)] transition-all outline-none text-black font-medium"
                                 value={formData.email}
                                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                               />
@@ -208,7 +208,7 @@ const Contact = () => {
                               required
                               type="text"
                               placeholder="What is this regarding?" 
-                              className="w-full pl-16 pr-8 py-5 bg-gray-50 rounded-3xl border border-transparent focus:bg-white focus:border-amber-500 focus:shadow-[0_0_0_4px_rgba(245,158,11,0.1)] transition-all outline-none text-black font-medium"
+                              className="w-full pl-14 md:pl-16 pr-6 md:pr-8 py-4 md:py-5 bg-gray-50 rounded-3xl border border-transparent focus:bg-white focus:border-amber-500 focus:shadow-[0_0_0_4px_rgba(245,158,11,0.1)] transition-all outline-none text-black font-medium"
                               value={formData.subject}
                               onChange={(e) => setFormData({...formData, subject: e.target.value})}
                             />
@@ -223,7 +223,7 @@ const Contact = () => {
                               required
                               rows={5}
                               placeholder="How can we help you today?" 
-                              className="w-full pl-16 pr-8 py-5 bg-gray-50 rounded-3xl border border-transparent focus:bg-white focus:border-amber-500 focus:shadow-[0_0_0_4px_rgba(245,158,11,0.1)] transition-all outline-none text-black font-medium resize-none"
+                              className="w-full pl-14 md:pl-16 pr-6 md:pr-8 py-4 md:py-5 bg-gray-50 rounded-3xl border border-transparent focus:bg-white focus:border-amber-500 focus:shadow-[0_0_0_4px_rgba(245,158,11,0.1)] transition-all outline-none text-black font-medium resize-none"
                               value={formData.message}
                               onChange={(e) => setFormData({...formData, message: e.target.value})}
                             />

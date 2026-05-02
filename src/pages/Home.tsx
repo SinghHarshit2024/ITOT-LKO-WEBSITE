@@ -169,10 +169,10 @@ const Home = () => {
             <span className="inline-block px-4 py-1 rounded-full bg-amber-500 text-black text-xs font-bold uppercase tracking-widest mb-6">
               Empowering Future Educators
             </span>
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight mb-8">
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight mb-8 px-4">
               ITOT <span className="text-amber-500 underline decoration-2 underline-offset-8">Lucknow</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+            <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 px-4">
               Transforming skilled technicians into master educators through industry-leading pedagogical training and advanced technical education.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -356,20 +356,20 @@ const Home = () => {
       {/* Life at ITOT Section - Bento Style */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-6 auto-rows-[240px] md:auto-rows-[300px]">
+          <div className="grid lg:grid-cols-12 gap-6 auto-rows-min md:auto-rows-[300px]">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="lg:col-span-8 bg-gray-50 rounded-[40px] p-12 flex flex-col justify-end relative overflow-hidden group border border-gray-100 shadow-sm"
+              className="lg:col-span-8 bg-gray-50 rounded-[40px] p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group border border-gray-100 shadow-sm min-h-[350px] md:min-h-0"
             >
               <img src="/Images/img1.jpeg" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 grayscale transition-all duration-700 group-hover:scale-105" alt="Life" />
               <div className="relative z-10">
                 <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block">Campus Life</span>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-black max-w-xl leading-none">
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-black max-w-xl leading-none">
                   More Than Just A Classroom
                 </h2>
-                <p className="text-gray-600 mt-6 max-w-lg text-lg">
+                <p className="text-gray-600 mt-6 max-w-lg text-base md:text-lg">
                   Experience a vibrant community of skill-seekers. From technical competitions to cultural celebrations, we nurture holistic growth.
                 </p>
               </div>
@@ -434,12 +434,12 @@ const Home = () => {
       {/* Featured Courses Preview */}
       <section className="py-24 bg-[#f9f9f7]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-black">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8 text-black">
             <div className="max-w-2xl">
-              <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block">Specialized Training</span>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">Industry Level <br /> Technical Courses</h2>
+              <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block text-center md:text-left">Specialized Training</span>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-center md:text-left">Industry Level <br /> Technical Courses</h2>
             </div>
-            <Link to="/courses" className="text-sm font-bold border-b-2 border-black pb-1 hover:text-amber-600 hover:border-amber-600 transition-all uppercase tracking-widest">
+            <Link to="/courses" className="w-full md:w-auto text-center md:text-left text-sm font-bold border-b-2 border-black pb-1 hover:text-amber-600 hover:border-amber-600 transition-all uppercase tracking-widest">
               View All Courses
             </Link>
           </div>
@@ -506,7 +506,7 @@ const Home = () => {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-20 text-black">
             <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block">Help Center</span>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">Frequently Asked <br /> Questions</h2>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 px-4">Frequently Asked <br /> Questions</h2>
           </div>
 
           <div className="space-y-4">

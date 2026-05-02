@@ -24,7 +24,7 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
             >
               <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-6 block">Our Heritage & Future</span>
-              <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-10 leading-[0.9]">
+              <h1 className="text-4xl md:text-8xl font-bold tracking-tighter mb-10 leading-[0.9] px-4 md:px-0">
                 Pioneering Technical Training in <span className="text-amber-500 underline decoration-2 underline-offset-8">Lucknow.</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl">
@@ -47,14 +47,14 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="aspect-[16/9] rounded-[40px] overflow-hidden shadow-2xl relative group"
+                className="aspect-square md:aspect-[16/9] rounded-3xl md:rounded-[40px] overflow-hidden shadow-2xl relative group"
               >
                 <img src="/Images/college.jpeg" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Camups" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </motion.div>
             </div>
             <div className="md:col-span-4">
-              <div className="bg-amber-500 p-12 rounded-[40px] text-black">
+              <div className="bg-amber-500 p-8 md:p-12 rounded-3xl md:rounded-[40px] text-black">
                 <p className="text-4xl font-black mb-4">30+</p>
                 <p className="font-bold tracking-tight text-xl leading-tight">Years of preparing <br /> world-class <br /> technical educators.</p>
               </div>
@@ -102,16 +102,16 @@ const About = () => {
             </div>
 
             <div className="relative">
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-6">
-                  <div className="bg-black text-white p-10 rounded-[40px]">
+                  <div className="bg-black text-white p-8 md:p-10 rounded-3xl md:rounded-[40px]">
                     <Target className="w-12 h-12 text-amber-500 mb-6" />
                     <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
                     <p className="text-gray-400 text-sm leading-relaxed italic">
                       "To be a global center of excellence in vocational pedagogy, fostering a new generation of trainers who inspire industrial innovation."
                     </p>
                   </div>
-                  <div className="bg-amber-100 p-10 rounded-[40px] border border-amber-200">
+                  <div className="bg-amber-100 p-8 md:p-10 rounded-3xl md:rounded-[40px] border border-amber-200">
                     <GraduationCap className="w-12 h-12 text-amber-600 mb-6" />
                     <h3 className="text-2xl font-bold mb-4 text-black">Our Mission</h3>
                     <p className="text-amber-800/80 text-sm leading-relaxed font-medium">
@@ -119,15 +119,15 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-                <div className="pt-12 space-y-6">
-                  <div className="bg-gray-100 p-10 rounded-[40px]">
+                <div className="pt-0 md:pt-12 space-y-6">
+                  <div className="bg-gray-100 p-8 md:p-10 rounded-3xl md:rounded-[40px]">
                     <Users className="w-12 h-12 text-amber-500 mb-6" />
                     <h3 className="text-2xl font-bold mb-4 text-black">Our Impact</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">
                       Successfully training over 10,000 instructors who are now shaping the future of ITIs across India.
                     </p>
                   </div>
-                  <div className="bg-amber-500 p-10 rounded-[40px]">
+                  <div className="bg-amber-500 p-8 md:p-10 rounded-3xl md:rounded-[40px]">
                     <CheckCircle2 className="w-12 h-12 text-black mb-6" />
                     <h3 className="text-2xl font-bold mb-4 text-black">Goal 2030</h3>
                     <p className="text-black/80 text-sm leading-relaxed font-bold italic">
@@ -177,7 +177,7 @@ const About = () => {
                  <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 max-w-md">Our Core Values</h2>
                  <p className="text-gray-400 text-lg leading-relaxed italic">"The DNA of our institution that defines every decision and action."</p>
               </div>
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="border-l-2 border-amber-500 pl-6">
                     <p className="font-bold text-xl mb-1">Integrity</p>
