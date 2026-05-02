@@ -88,7 +88,7 @@ const Gallery = () => {
                   alt={img.title} 
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 md:p-10">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 md:p-10">
                   <span className="text-amber-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2">{img.category}</span>
                   <p className="text-white font-bold text-xl md:text-2xl tracking-tighter leading-none">{img.title}</p>
                 </div>

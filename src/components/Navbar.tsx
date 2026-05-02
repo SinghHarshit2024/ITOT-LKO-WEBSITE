@@ -21,6 +21,18 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -31,7 +43,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
         <Link to="/" className="flex items-center gap-3">
           <img src="/Images/logo.jpg" alt="ITOT Logo" className="w-10 h-10 object-contain rounded-lg" />
           <span className="text-xl font-bold tracking-tighter text-black leading-tight">
@@ -55,7 +67,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-gray-900 focus:outline-none"
+          className="md:hidden text-gray-900 focus:outline-none z-50 relative"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

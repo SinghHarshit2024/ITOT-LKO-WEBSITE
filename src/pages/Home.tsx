@@ -228,20 +228,20 @@ const Home = () => {
       {/* Affiliations & Accreditations */}
       <section className="py-12 border-y border-gray-100 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-8 md:gap-24 opacity-80 md:opacity-60 md:grayscale md:hover:grayscale-0 transition-all duration-500">
             {[
-              { name: "NCVT", icon: ShieldCheck, full: "National Council for Vocational Training" },
-              { name: "DGT", icon: Zap, full: "Directorate General of Training" },
-              { name: "UP GOVT", icon: Building2, full: "Government of Uttar Pradesh" },
-              { name: "SKILL INDIA", icon: Globe, full: "Skill India Mission" }
+              { name: "NCVT", icon: ShieldCheck, full: "NCVT Council" },
+              { name: "DGT", icon: Zap, full: "DGT Training" },
+              { name: "UP GOVT", icon: Building2, full: "UP Government" },
+              { name: "SKILL INDIA", icon: Globe, full: "Skill India" }
             ].map((brand, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-black">
-                  <brand.icon className="w-5 h-5" />
+              <div key={i} className="flex items-center gap-3 justify-center md:justify-start">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-amber-500 rounded-full flex items-center justify-center text-black flex-shrink-0">
+                  <brand.icon className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <p className="font-black text-xl tracking-tighter leading-none">{brand.name}</p>
-                  <p className="text-[10px] uppercase font-bold text-gray-500">{brand.full}</p>
+                  <p className="font-black text-lg md:text-xl tracking-tighter leading-none">{brand.name}</p>
+                  <p className="text-[8px] md:text-[10px] uppercase font-bold text-gray-500">{brand.full}</p>
                 </div>
               </div>
             ))}
@@ -263,7 +263,7 @@ const Home = () => {
                 <img 
                   src="/Images/img4.jpeg" 
                   alt="Principal Desk"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover md:grayscale md:hover:grayscale-0 transition-all duration-700"
                 />
               </div>
               <div className="absolute -bottom-10 -right-10 bg-amber-500 p-12 rounded-[40px] hidden md:block text-black">
@@ -363,7 +363,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="lg:col-span-8 bg-gray-50 rounded-[40px] p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group border border-gray-100 shadow-sm min-h-[350px] md:min-h-0"
             >
-              <img src="/Images/img1.jpeg" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 grayscale transition-all duration-700 group-hover:scale-105" alt="Life" />
+              <img src="/Images/img1.jpeg" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 md:opacity-20 md:grayscale md:transition-all md:duration-700 md:group-hover:scale-105" alt="Life" />
               <div className="relative z-10">
                 <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block">Campus Life</span>
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-black max-w-xl leading-none">
@@ -392,7 +392,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="lg:col-span-4 bg-black rounded-[40px] overflow-hidden relative group"
             >
-              <img src="/Images/img2.jpeg" className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" alt="Workshop" />
+              <img src="/Images/img2.jpeg" className="w-full h-full object-cover opacity-80 md:opacity-60 md:group-hover:scale-110 transition-transform duration-700" alt="Workshop" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-10 flex flex-col justify-end">
                 <p className="text-white font-bold tracking-tight">Advanced Labs</p>
                 <p className="text-gray-400 text-sm">Working with industrial standards</p>

@@ -49,7 +49,7 @@ const About = () => {
                 viewport={{ once: true }}
                 className="aspect-square md:aspect-[16/9] rounded-3xl md:rounded-[40px] overflow-hidden shadow-2xl relative group"
               >
-                <img src="/Images/college.jpeg" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Camups" />
+                <img src="/Images/college.jpeg" className="w-full h-full object-cover md:grayscale md:hover:grayscale-0 transition-all duration-700" alt="Camups" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </motion.div>
             </div>
