@@ -157,84 +157,118 @@ const Home = () => {
 
   return (
     <div className="overflow-x-hidden">
-      {/* Hero Section with Slider */}
-      <section className="relative h-[90vh] flex items-center justify-center bg-black overflow-hidden group">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.6, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute inset-0"
-          >
-            <img 
-              src={images[currentIndex].url} 
-              alt={images[currentIndex].title}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
+      {/* Hero Section with Modern Split Layout */}
+      <section id="hero-section" className="relative min-h-screen lg:h-screen flex items-center bg-[#0d0f1a] overflow-hidden">
+        {/* Background Decorative Element */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-amber-500/5 skew-x-12 translate-x-24 hidden lg:block" />
         
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-        
-        {/* Navigation Arrows */}
-        <button 
-          onClick={prevSlide}
-          className="absolute left-4 z-30 p-4 rounded-full bg-black/40 text-white hover:bg-amber-500 hover:text-black transition-all md:left-8 opacity-0 group-hover:opacity-100 focus:opacity-100"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="w-8 h-8" />
-        </button>
-        <button 
-          onClick={nextSlide}
-          className="absolute right-4 z-30 p-4 rounded-full bg-black/40 text-white hover:bg-amber-500 hover:text-black transition-all md:right-8 opacity-0 group-hover:opacity-100 focus:opacity-100"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-8 h-8" />
-        </button>
+        <div className="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-16 items-center w-full py-12 lg:py-0">
+          
+          {/* Content Column - Appears below image on mobile */}
+          <div className="text-left order-2 lg:order-1 mt-12 lg:mt-0">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="flex items-center gap-3 mb-4 lg:mb-6">
+                <div className="w-8 lg:w-12 h-[1px] bg-amber-500" />
+                <span className="text-amber-500 text-[9px] lg:text-[10px] font-black uppercase tracking-[0.3em] lg:tracking-[0.4em]">
+                  Empowering Future Educators
+                </span>
+              </div>
+              
+              <h1 id="hero-title" className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black text-white leading-[1.2] lg:leading-[1.1] tracking-tighter mb-4 lg:mb-6 uppercase">
+                STATE STAFF TRAINING <br className="hidden md:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-300">& RESEARCH Centre</span>
+                <div className="text-xs md:text-base text-gray-400 mt-2 font-bold tracking-widest leading-none">"ITOT, ALIGANJ, LUCKNOW"</div>
+              </h1>
+              
+              <p className="text-gray-400 text-xs md:text-sm lg:text-base max-w-md mb-6 lg:mb-10 font-medium leading-relaxed">
+                Transforming skilled technicians into master educators through <span className="text-white font-semibold">industry-leading pedagogical training</span> and advanced technical education.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 mb-8 lg:mb-10">
+                <Link 
+                  to="/about" 
+                  id="btn-explore"
+                  className="w-full sm:w-auto px-6 lg:px-8 py-3 lg:py-4 bg-amber-500 text-black rounded-lg lg:rounded-xl text-[10px] lg:text-[11px] font-black uppercase tracking-widest hover:bg-white transition-all flex items-center justify-center gap-3 group shadow-xl shadow-amber-500/10"
+                >
+                  Explore Institute <ArrowRight className="w-3.5 h-3.5 lg:w-4 lg:h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link 
+                  to="/courses" 
+                  id="btn-programs"
+                  className="w-full sm:w-auto px-6 lg:px-8 py-3 lg:py-4 bg-white/5 backdrop-blur-md text-white border border-white/10 rounded-lg lg:rounded-xl text-[10px] lg:text-[11px] font-black uppercase tracking-widest hover:bg-white/10 transition-all flex items-center justify-center"
+                >
+                  View Programs
+                </Link>
+              </div>
+            </motion.div>
+          </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="inline-block px-4 py-1 rounded-full bg-amber-500 text-black text-xs font-bold uppercase tracking-widest mb-6">
-              Empowering Future Educators
-            </span>
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight mb-8 px-4">
-              ITOT <span className="text-amber-500 underline decoration-2 underline-offset-8">Lucknow</span>
-            </h1>
-            <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 px-4">
-              Transforming skilled technicians into master educators through industry-leading pedagogical training and advanced technical education.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/about" className="px-8 py-4 bg-amber-500 text-black rounded-full font-bold hover:bg-white transition-all flex items-center justify-center gap-2 group shadow-xl shadow-amber-500/20">
-                Explore Institute <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/courses" className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-bold border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center">
-                View Programs
-              </Link>
+          {/* Image Column - Appears on top on mobile */}
+          <div className="relative flex flex-col items-center lg:items-end justify-center order-1 lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-[420px] aspect-square"
+            >
+              {/* Decorative Accent for Mobile Visibility */}
+              <div className="absolute -inset-2 lg:-inset-4 border border-amber-500/20 rounded-2xl lg:rounded-[32px] pointer-events-none" />
+              
+              {/* Main Image Container */}
+              <div id="hero-image-container" className="relative h-full w-full rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl group/img border border-white/10 bg-gray-900">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="absolute inset-0"
+                  >
+                    <img 
+                      src={images[currentIndex].url} 
+                      alt={images[currentIndex].title}
+                      className="w-full h-full object-cover transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                    
+                    {/* Floating Label - Hidden on very small screens to save space */}
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                      <motion.div
+                        initial={{ opacity: 0, y: 5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="bg-black/40 backdrop-blur-md border border-white/10 p-3 rounded-lg lg:rounded-xl"
+                      >
+                        <p className="text-amber-500 text-[7px] lg:text-[8px] font-black uppercase tracking-widest mb-0.5 lg:mb-1">Campus Snapshot</p>
+                        <p className="text-white font-bold text-[10px] lg:text-xs leading-tight tracking-tight">{images[currentIndex].title}</p>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
+            
+            {/* Slide Indicators - Below Image Container */}
+            <div className="flex items-center justify-center gap-3 mt-8 lg:mt-10 w-full lg:max-w-[420px]">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-1 lg:h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 lg:w-12 bg-amber-500' : 'w-2 lg:w-3 bg-white/20 hover:bg-white/40'}`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
             </div>
-          </motion.div>
-        </div>
-
-        {/* Slide Indicators */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          {images.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? 'w-8 bg-amber-500' : 'bg-white/40'}`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
+          </div>
         </div>
       </section>
 
       {/* Government Dignitaries Section */}
-      <section className="py-16 bg-[#fdfdfb] border-b border-gray-100">
+      <section className="py-24 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <motion.span 
@@ -274,12 +308,12 @@ const Home = () => {
                 transition={{ delay: i * 0.2 }}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-8 border-gray-50 mb-6 transition-all duration-500 shadow-xl relative">
-                  <div className="absolute inset-0 bg-amber-500/5 z-10" />
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-8 border-gray-50 mb-6 group-hover:border-amber-500/20 transition-all duration-500 shadow-xl relative">
+                  <div className="absolute inset-0 bg-amber-500/5 group-hover:bg-transparent transition-colors z-10" />
                   <img 
                     src={leader.image} 
                     alt={leader.name}
-                    className="w-full h-full object-cover transition-all duration-700"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -376,16 +410,18 @@ const Home = () => {
                 transition={{ delay: i * 0.2 }}
                 className="bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-sm transition-all group"
               >
-                <div className="aspect-[4/5] relative overflow-hidden">
-                  <img 
-                    src={leader.image} 
-                    alt={leader.role}
-                    className="w-full h-full object-cover transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-amber-500 font-bold uppercase tracking-widest text-[10px] mb-1">{leader.role}</p>
-                    <p className="text-white font-bold text-xl tracking-tight">{leader.name}</p>
+                <div className="p-6 pb-0">
+                  <div className="aspect-[3/4] relative overflow-hidden rounded-[32px] shadow-lg">
+                    <img 
+                      src={leader.image} 
+                      alt={leader.role}
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <p className="text-amber-500 font-bold uppercase tracking-widest text-[9px] mb-1">{leader.role}</p>
+                      <p className="text-white font-bold text-lg tracking-tight leading-none">{leader.name}</p>
+                    </div>
                   </div>
                 </div>
                 <div className="p-8 relative min-h-[180px] flex flex-col justify-center">
@@ -465,7 +501,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="lg:col-span-8 bg-gray-50 rounded-[40px] p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group border border-gray-100 shadow-sm min-h-[350px] md:min-h-0"
             >
-              <img src="/Images/img1.jpeg" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 md:transition-all md:duration-700" alt="Life" />
+              <img src="/Images/img1.jpeg" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 md:transition-all md:duration-700 md:group-hover:scale-105" alt="Life" />
               <div className="relative z-10">
                 <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 block">Campus Life</span>
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-black max-w-xl leading-none">
@@ -494,7 +530,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="lg:col-span-4 bg-black rounded-[40px] overflow-hidden relative group"
             >
-              <img src="/Images/img2.jpeg" className="w-full h-full object-cover opacity-80 transition-transform duration-700" alt="Workshop" />
+              <img src="/Images/img2.jpeg" className="w-full h-full object-cover opacity-80 md:transition-transform md:duration-700 md:group-hover:scale-110" alt="Workshop" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-10 flex flex-col justify-end">
                 <p className="text-white font-bold tracking-tight">Advanced Labs</p>
                 <p className="text-gray-400 text-sm">Working with industrial standards</p>

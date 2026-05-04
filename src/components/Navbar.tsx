@@ -16,12 +16,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
-
-  // Prevent body scroll when mobile menu is open
+  // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -42,13 +37,39 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`relative w-full transition-all duration-300 ${isOpen ? 'bg-white' : (scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3 lg:py-4' : 'bg-transparent py-4 lg:py-6')}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-[70]">
-        <Link to="/" className="flex items-center gap-3">
-          <img src="/Images/logo.jpg" alt="ITOT Logo" className="w-10 h-10 object-contain rounded-lg" />
-          <span className="text-xl font-bold tracking-tighter text-black leading-tight">
-            Govt. ITOT <br className="md:hidden" /> Lucknow
-          </span>
+        <Link to="/" className="flex items-center gap-2 md:gap-4">
+          <div className="relative group">
+            <img 
+              src="/Images/logo.jpg" 
+              alt="ITOT Logo" 
+              className="w-10 h-10 md:w-14 md:h-14 object-contain relative z-10"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const parent = e.currentTarget.parentElement;
+                if (parent) {
+                  const fallback = parent.querySelector('.logo-fallback');
+                  if (fallback) fallback.classList.remove('hidden');
+                }
+              }}
+            />
+            {/* Fallback Logo if image is missing */}
+            <div className="logo-fallback hidden w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-full flex items-center justify-center shadow-lg border-2 border-white/20 transition-transform group-hover:scale-105">
+              <span className="text-black font-black text-[10px] md:text-xs">SSTRC</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-[9px] md:text-[11px] font-black tracking-tighter text-black leading-none uppercase">
+              STATE STAFF TRAINING
+            </span>
+            <span className="text-[9px] md:text-[11px] font-black tracking-tighter text-black leading-none uppercase">
+              & RESEARCH Centre
+            </span>
+            <span className="text-[8px] md:text-[9px] font-bold tracking-tight text-amber-600 leading-tight mt-0.5 opacity-80">
+              "ITOT, ALIGANJ, LUCKNOW"
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Links */}
@@ -67,7 +88,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-gray-900 focus:outline-none z-50 relative"
+          className="md:hidden text-gray-900 focus:outline-none z-[80] relative"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -93,7 +114,7 @@ const Navbar = () => {
               className="bg-white w-full max-h-[90vh] flex flex-col shadow-2xl rounded-b-[40px] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex-1 flex flex-col items-center justify-center p-8 pt-24 pb-16 space-y-8 overflow-y-auto">
+              <div className="flex-1 flex flex-col items-center justify-center p-8 pt-40 pb-16 space-y-8 overflow-y-auto">
                 {navLinks.map((link, idx) => (
                   <motion.div
                     key={link.name}

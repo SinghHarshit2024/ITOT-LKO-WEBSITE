@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import AnnouncementBar from './components/AnnouncementBar';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 import Home from './pages/Home';
@@ -15,8 +16,11 @@ export default function App() {
       <Preloader />
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-[#fdfdfc] text-[#1a1a1a] font-sans">
-        <Navbar />
-        <main className="flex-grow pt-20">
+        <div className="fixed top-0 left-0 w-full z-[100]">
+          <AnnouncementBar />
+          <Navbar />
+        </div>
+        <main className="flex-grow pt-36 lg:pt-32">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

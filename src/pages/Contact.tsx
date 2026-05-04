@@ -111,7 +111,7 @@ const Contact = () => {
                     <div className="flex gap-4 items-start">
                       <MapPin className="w-5 h-5 text-amber-500 flex-shrink-0 mt-1" />
                       <p className="text-gray-400 text-sm leading-relaxed">
-                        Institute of Training of Trainers (ITOT), Kapurthala Road, Aliganj, Lucknow, UP 226024
+                        STATE STAFF TRAINING & RESEARCH Centre, Kapurthala Road, Aliganj, Lucknow, UP 226024
                       </p>
                     </div>
                     <div className="flex gap-4 items-start">

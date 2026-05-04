@@ -48,8 +48,8 @@ const Preloader: React.FC = () => {
                 <span className="text-black font-black text-3xl -rotate-12">I</span>
               </div>
               <div className="text-white">
-                <h1 className="text-4xl font-black tracking-tighter leading-none">ITOT</h1>
-                <p className="text-amber-500 text-[10px] uppercase font-bold tracking-[0.3em]">Lucknow</p>
+                <h1 className="text-3xl font-black tracking-tighter leading-none uppercase">SSTRC Lucknow</h1>
+                <p className="text-amber-500 text-[9px] uppercase font-bold tracking-[0.2em] mt-1">"ITOT, Aliganj, Lucknow"</p>
               </div>
             </motion.div>
 

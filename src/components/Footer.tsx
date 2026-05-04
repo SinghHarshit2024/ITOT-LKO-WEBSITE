@@ -5,9 +5,15 @@ const Footer = () => {
     <footer className="bg-[#111] text-white py-12">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
-          <Link to="/" className="flex items-center gap-3 mb-6">
-            <span className="text-xl font-bold tracking-tighter text-white">
-              Govt. ITOT Lucknow
+          <Link to="/" className="flex flex-col mb-6">
+            <span className="text-lg md:text-xl font-black tracking-tighter text-white leading-tight uppercase">
+              STATE STAFF TRAINING
+            </span>
+            <span className="text-lg md:text-xl font-black tracking-tighter text-white leading-tight uppercase">
+              & RESEARCH Centre
+            </span>
+            <span className="text-sm font-semibold tracking-wide text-amber-500 italic mt-1">
+              "ITOT, ALIGANJ, LUCKNOW"
             </span>
           </Link>
           <p className="mt-4 text-gray-400 max-w-md">
@@ -38,7 +44,7 @@ const Footer = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-        <p>© {new Date().getFullYear()} ITOT Lucknow. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} STATE STAFF TRAINING & RESEARCH Centre. All rights reserved.</p>
       </div>
     </footer>
   );
