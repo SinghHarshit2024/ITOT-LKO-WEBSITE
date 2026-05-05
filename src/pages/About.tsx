@@ -16,7 +16,7 @@ const About = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative py-32 bg-[#fdfdfc]">
+      <section className="relative pt-12 pb-32 bg-[#fdfdfc]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl">
             <motion.div

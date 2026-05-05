@@ -61,7 +61,7 @@ const Contact = () => {
   return (
     <div className="bg-[#fdfdfc] overflow-x-hidden">
       {/* Hero Header */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-12 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

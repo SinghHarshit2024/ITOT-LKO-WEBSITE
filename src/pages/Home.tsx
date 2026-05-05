@@ -158,7 +158,7 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section with Modern Split Layout */}
-      <section id="hero-section" className="relative min-h-screen lg:h-screen flex items-center bg-[#0d0f1a] overflow-hidden">
+      <section id="hero-section" className="relative min-h-[80vh] lg:h-[85vh] flex items-center bg-[#0d0f1a] overflow-hidden">
         {/* Background Decorative Element */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-amber-500/5 skew-x-12 translate-x-24 hidden lg:block" />
         

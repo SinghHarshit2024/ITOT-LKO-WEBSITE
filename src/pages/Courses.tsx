@@ -185,7 +185,7 @@ const Courses = () => {
   );
 
   return (
-    <div className="py-24 bg-[#fdfdfc]">
+    <div className="pt-12 pb-24 bg-[#fdfdfc]">
       <div className="max-w-7xl mx-auto px-6">
         <header className="mb-20">
           <div className="grid md:grid-cols-2 items-center gap-12">

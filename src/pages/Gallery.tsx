@@ -27,7 +27,7 @@ const Gallery = () => {
     : images.filter(img => img.category === activeCategory);
 
   return (
-    <div className="py-24 bg-[#fdfdfc]">
+    <div className="pt-12 pb-24 bg-[#fdfdfc]">
       <div className="max-w-7xl mx-auto px-6">
         <header className="mb-20">
           <motion.div
