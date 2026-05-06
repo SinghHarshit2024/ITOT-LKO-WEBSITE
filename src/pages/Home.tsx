@@ -586,13 +586,12 @@ const Home = () => {
             {['Computer Software Application', 'Computer Hardware & Networking', 'Electrician Trade'].map((course, idx) => (
               <motion.div 
                 key={idx}
-                whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[32px] shadow-sm border border-gray-100 group cursor-pointer"
+                className="bg-white p-10 rounded-[32px] shadow-sm border border-amber-500/20 md:border-gray-100 group cursor-pointer md:hover:border-amber-500 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-8 font-bold text-2xl group-hover:bg-amber-500 group-hover:text-black transition-colors">
+                <div className="w-14 h-14 bg-amber-500 text-black md:bg-amber-50 md:text-amber-600 rounded-2xl flex items-center justify-center mb-8 font-bold text-2xl md:group-hover:bg-amber-500 md:group-hover:text-black transition-colors">
                   0{idx + 1}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-amber-600 transition-colors tracking-tight text-black">{course}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-amber-600 md:text-black md:group-hover:text-amber-600 transition-colors tracking-tight">{course}</h3>
                 <p className="text-gray-500 mb-8 leading-relaxed">
                   Comprehensive training module designed to meet the rigorous technological demands of the current industry 4.0 standards.
                 </p>

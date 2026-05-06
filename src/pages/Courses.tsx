@@ -381,19 +381,18 @@ interface CourseCardProps {
 
 const CourseCard = ({ course, onOpen }: CourseCardProps) => (
   <motion.div 
-    whileHover={{ y: -10 }}
-    className="group p-8 md:p-10 bg-white border border-gray-100 rounded-3xl md:rounded-[40px] hover:border-amber-500 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 flex flex-col justify-between"
+    className="group p-8 md:p-10 bg-white border border-amber-500 shadow-2xl shadow-amber-500/10 md:shadow-sm md:border-gray-100 rounded-3xl md:rounded-[40px] md:hover:border-amber-500 md:hover:shadow-2xl md:hover:shadow-amber-500/10 transition-all duration-500 flex flex-col justify-between"
   >
     <div>
       <div className="flex justify-between items-start mb-10">
-        <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+        <div className="w-14 h-14 bg-amber-500 text-black md:bg-gray-50 md:text-amber-500 rounded-2xl flex items-center justify-center font-bold md:group-hover:bg-amber-500 md:group-hover:text-black transition-colors">
           <BookOpen className="w-6 h-6" />
         </div>
-        <div className="bg-gray-100 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-gray-400 group-hover:bg-amber-100 group-hover:text-amber-600 transition-colors">
+        <div className="bg-amber-100 text-amber-600 md:bg-gray-100 md:text-gray-400 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest md:group-hover:bg-amber-100 md:group-hover:text-amber-600 transition-colors">
           Instructors Scheme
         </div>
       </div>
-      <h3 className="text-2xl font-bold mb-6 group-hover:text-amber-600 transition-colors uppercase tracking-tighter leading-tight text-black">{course.name}</h3>
+      <h3 className="text-2xl font-bold mb-6 text-amber-600 md:text-black md:group-hover:text-amber-600 transition-colors uppercase tracking-tighter leading-tight">{course.name}</h3>
       <div className="space-y-4 mb-10">
         <div className="flex items-center gap-4 text-sm font-medium text-gray-500">
           <Clock className="w-5 h-5 text-amber-500 opacity-60" />
@@ -407,9 +406,9 @@ const CourseCard = ({ course, onOpen }: CourseCardProps) => (
     </div>
     <button 
       onClick={onOpen}
-      className="w-full py-5 bg-gray-50 text-black font-bold text-sm rounded-3xl group-hover:bg-black group-hover:text-white transition-all flex items-center justify-center gap-2"
+      className="w-full py-5 bg-black text-white md:bg-gray-50 md:text-black font-bold text-sm rounded-3xl md:group-hover:bg-black md:group-hover:text-white transition-all flex items-center justify-center gap-2"
     >
-      Program Details <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+      Program Details <ArrowRight className="w-4 h-4 opacity-100 translate-x-1 md:opacity-0 md:group-hover:opacity-100 md:group-hover:translate-x-1 transition-all" />
     </button>
   </motion.div>
 );
