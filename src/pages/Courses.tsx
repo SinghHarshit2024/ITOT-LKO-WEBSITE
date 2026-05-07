@@ -59,7 +59,7 @@ const Courses = () => {
           description: "Focuses on administrative excellence, digital office tools, communication skills, and organizational management."
         },
         { 
-          name: "Secretarial Practice", 
+          name: "Secretarial Practice (Hindi)", 
           duration: "1 Year", 
           eligibility: "10th/12th Pass",
           category: "IT & Digital Services",
@@ -98,7 +98,7 @@ const Courses = () => {
           description: "Training in process control instrumentation, calibration, and maintenance of industrial sensors." 
         },
         { 
-          name: "RAC Mechanic", 
+          name: "Mechanic Refrigeration and Air-Conditioning", 
           duration: "1 Year", 
           eligibility: "10th Pass + ITI", 
           category: "Electrical & Electronics",
@@ -144,6 +144,30 @@ const Courses = () => {
           prospects: ["Sanitation Trainer", "Site Supervisor", "Contractor"],
           description: "Training in modern sanitation systems, blueprint reading, and industrial plumbing solutions." 
         },
+        { 
+          name: "Draughtsman Mechanical", 
+          duration: "1 Year", 
+          eligibility: "10th Pass + ITI", 
+          category: "Mechanical & Civil Works",
+          prospects: ["Mechanical CAD Instructor", "Design Engineer Assistant", "Drafting Consultant"],
+          description: "Comprehensive training in mechanical engineering drawings, machine component design, and CAD standards." 
+        },
+        { 
+          name: "Mechanic Diesel", 
+          duration: "1 Year", 
+          eligibility: "10th Pass + ITI", 
+          category: "Mechanical & Civil Works",
+          prospects: ["Diesel Engine Trainer", "Heavy Vehicle Consultant", "Service Manager"],
+          description: "Specialized training in maintenance, troubleshooting, and repair of various diesel engine systems." 
+        },
+        { 
+          name: "Mechanic Tractor", 
+          duration: "1 Year", 
+          eligibility: "10th Pass + ITI", 
+          category: "Mechanical & Civil Works",
+          prospects: ["Agricultural Machinery Trainer", "Farm Equipment Consultant", "Service Supervisor"],
+          description: "Focuses on the maintenance and repair of agricultural tractors and allied equipment used in farming." 
+        },
       ]
     },
     {
@@ -174,6 +198,14 @@ const Courses = () => {
           category: "Creative & Lifestyle",
           prospects: ["Industrial Sewing Expert", "Production Manager", "Textile Trainer"],
           description: "Industrial sewing techniques, textile technology, and mass-production efficiency." 
+        },
+        { 
+          name: "Painting Technology", 
+          duration: "1 Year", 
+          eligibility: "10th Pass + ITI", 
+          category: "Creative & Lifestyle",
+          prospects: ["Surface Finishing Trainer", "Industrial Painter", "Coating Consultant"],
+          description: "Covers advanced spray painting techniques, surface preparation, and industrial coating technologies." 
         },
       ]
     }
